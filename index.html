@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DnD World Builder</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="widget">
+    <h1>World Builder</h1>
+
+    <label for="region">Region Name</label>
+    <input type="text" id="region" placeholder="E.g., The Ashen Wastes" />
+
+    <label for="terrain">Terrain Type</label>
+    <select id="terrain">
+      <option>Mountains</option>
+      <option>Forest</option>
+      <option>Desert</option>
+      <option>Swamp</option>
+      <option>Urban</option>
+    </select>
+
+    <label for="description">Description</label>
+    <textarea id="description" rows="3" placeholder="Describe the region's lore, threats, and secrets..."></textarea>
+
+    <button onclick="generateWorld()">Add to Campaign</button>
+    <button class="edit-toggle" onclick="toggleEditMode()">Toggle Edit Mode</button>
+
+    <div class="output" id="output"></div>
+    <div id="saved"></div>
+  </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
