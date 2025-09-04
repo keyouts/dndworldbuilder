@@ -7,32 +7,37 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="widget">
-    <h1>World Builder</h1>
+  <div class="widget" role="form" aria-labelledby="world-builder-title">
+    <h1 id="world-builder-title">World Builder</h1>
 
     <label for="region">Region Name</label>
-    <input type="text" id="region" placeholder="E.g., The Ashen Wastes" />
+    <input type="text" id="region" placeholder="E.g., The Ashen Wastes" aria-required="true" aria-describedby="region-desc" />
+    <span id="region-desc" class="visually-hidden">Enter the name of the region you want to add to your campaign.</span>
 
     <label for="terrain">Terrain Type</label>
-    <select id="terrain">
+    <select id="terrain" aria-required="true" aria-describedby="terrain-desc">
       <option>Mountains</option>
       <option>Forest</option>
       <option>Desert</option>
       <option>Swamp</option>
       <option>City</option>
     </select>
+    <span id="terrain-desc" class="visually-hidden">Select the terrain type for the region.</span>
 
     <label for="description">Description</label>
-    <textarea id="description" rows="3" placeholder="Describe the region's lore, threats, and secrets..."></textarea>
+    <textarea id="description" rows="3" placeholder="Describe the region's lore, threats, and secrets..." aria-describedby="description-desc"></textarea>
+    <span id="description-desc" class="visually-hidden">Provide a detailed description of the region including lore, threats, and secrets.</span>
 
-    <button onclick="generateWorld()">Add to Campaign</button>
-    <button class="edit-toggle" onclick="toggleEditMode()">Toggle Edit Mode</button>
+    <button onclick="generateWorld()" aria-label="Add region to campaign">Add to Campaign</button>
+    <button class="edit-toggle" onclick="toggleEditMode()" aria-pressed="false" aria-label="Toggle edit mode">Toggle Edit Mode</button>
 
-    <div class="output" id="output"></div>
-    <div id="saved"></div>
+    <div class="output" id="output" role="region" aria-live="polite" aria-label="Generated world output"></div>
+    <div id="saved" role="region" aria-live="polite" aria-label="Saved regions"></div>
   </div>
 
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
+
+
 
